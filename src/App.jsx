@@ -3,19 +3,25 @@ import Navbar from "./components/Navbar";
 import Simple from "./components/Simple";
 import UserInfo from "./components/UserMenu";
 import UserProvider  from "./components/UserContext";
+import { useRef } from "react";
 
 
 function App() {
-  // props drilling 
 
-  // context => makes the resource shared so that all the components or files can access them, 
+  const inputRef = useRef(null);
+
   return (
     <>
-    <UserProvider> // creating this context 
-    <Navbar />
-    {/* any component inside the UserContext can access the username */}
-    </UserProvider>
+    <input  ref={inputRef}  defaultValue="Hello I'm bhavy" />
+    <button onClick={() => {
+      inputRef.current.select()
+    }}>Select Text</button>
 
+    <button onClick={()=> {
+      inputRef.current.value ="";
+      inputRef.current.focus()
+
+    }}>Clear Input</button>
     </>
   );
 }

@@ -34,3 +34,8 @@ export function useUser() {
 
     return context;
 };
+
+// 1.start using link inside the todo apps
+// 2.we are listing todos right in the home page, create another page where todos will be visible, updated, 
+// delelted or added
+//3. create context for the todos, navbar -> settings -> listTodos and call it in the page you created 
